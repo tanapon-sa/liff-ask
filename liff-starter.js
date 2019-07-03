@@ -27,14 +27,213 @@ function initializeApp(data) {
     // sendMessages call
     document.getElementById('sendmessagebutton').addEventListener('click', function () {
         liff.sendMessages([{
-            type: 'text',
-            text: "You've successfully sent a message! Hooray!"
-        }, {
-            type: 'sticker',
-            packageId: '2',
-            stickerId: '144'
+            "type": "flex",
+            "altText": "Flex Message",
+            "contents": {
+                "type": "bubble",
+                "direction": "ltr",
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "Summary",
+                            "size": "lg",
+                            "weight": "bold",
+                            "color": "#6771AA"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "฿ 59,810",
+                                    "flex": 4,
+                                    "size": "xxl",
+                                    "weight": "bold"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "ค่างวด",
+                                    "flex": 1,
+                                    "color": "#999395"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "2019.07.01 09.00น.",
+                                    "flex": 10,
+                                    "size": "xs",
+                                    "align": "start",
+                                    "color": "#C1C1C1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "Hire purchase",
+                                    "flex": 4,
+                                    "align": "start"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "Apply Complete.",
+                                    "flex": 5,
+                                    "size": "sm",
+                                    "align": "end",
+                                    "weight": "bold",
+                                    "color": "#0B9809"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "separator",
+                            "margin": "lg",
+                            "color": "#0C0C0C"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "spacer",
+                                    "size": "md"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "New Truck",
+                                    "flex": 4,
+                                    "size": "sm",
+                                    "align": "start"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "12WHEELS TRUCK ISUZU - บรรทุก12ล้อ",
+                                    "flex": 6,
+                                    "size": "sm",
+                                    "align": "end",
+                                    "wrap": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "ยอดจัด (Inc.)",
+                                    "flex": 4,
+                                    "color": "#A8A1A1"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "฿2,840,000.00",
+                                    "flex": 3,
+                                    "align": "end"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "ดาว์น (Inc.)",
+                                    "flex": 4,
+                                    "color": "#A8A1A1"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "฿149,500.00 / 5%",
+                                    "flex": 5,
+                                    "align": "end"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "ดอกเบี้ย",
+                                    "flex": 4,
+                                    "color": "#A8A1A1"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "4%",
+                                    "flex": 5,
+                                    "align": "end"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "ระยะเวลา",
+                                    "flex": 4,
+                                    "color": "#A8A1A1"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "60 งวด",
+                                    "flex": 5,
+                                    "align": "end"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "separator",
+                            "margin": "lg",
+                            "color": "#0C0C0C"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "spacer"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "text": "View Detail",
+                            "color": "#370CDD",
+                            "action": {
+                                "type": "uri",
+                                "label": "รายละเอียด",
+                                "uri": "https://www.ask.co.th"
+                            }
+                        }
+                    ]
+                }
+            }
         }]).then(function () {
-            window.alert("Message sent");
+            // window.alert("Message sent");
         }).catch(function (error) {
             window.alert("Error sending message: " + error);
         });
